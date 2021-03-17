@@ -1,0 +1,22 @@
+{% macro radio(data) %}
+
+    <label class="{% if data.authentication %}form__radio--is-small{% endif %} {% if data.image %}form__radio--is-image{% endif %}" for="{{ data.value }}">
+
+      <span class="form__radio-title">{{ data.value }}</span>
+      
+      <input class="form__radio" 
+        type="radio" 
+        name="{{ data.name }}" 
+        id="{{ data.value }}" 
+        value="{{ data.value }}"
+        {% if data.checked === data.value %} checked {% endif %}
+        {% if data.required %} required{% endif %}>
+      
+      {% if data.image %}
+        <div class="form__radio-background"></div>
+        <img class="form__radio-image" src="{{ data.image }}" alt="{{ data.value }}">
+      {% endif %}
+
+    </label>
+
+{% endmacro %}

@@ -1,0 +1,31 @@
+{% macro input(data) %}
+
+    <div class="c-input form__item{%- if data.class %} {{ data.class }}{% endif -%}">
+
+        <div class="input__wrapper" title="{{ data.label }}">
+
+            <label class="input__label {%- if data.sronly %} u--sr-only{% endif -%}" for="{{ data.id }}">
+                {{- data.label -}}
+            </label>
+
+            <input class="input__input"
+                type="{%- if data.type %}{{ data.type }}{% else %}text{% endif -%}"
+                name="{{ data.name }}"
+                value="{{ data.value }}"
+                id="{{ data.id }}"
+                {%- if data.required %} required{% endif -%}
+                {%- if data.autofocus %} autofocus{% endif -%}
+                {%- if data.disabled %} disabled{% endif -%}
+                {%- if data.placeholder %} placeholder="{{ data.placeholder }}"{% endif -%}
+                {%- if data.autocomplete %} autocomplete="on"{% endif -%}
+                {%- if data.min %} min="{{ data.min }}"{% endif -%}
+                {%- if data.max %} max="{{ data.max }}"{% endif -%}
+                {%- if data.pattern %} pattern="{{ data.pattern }}"{% endif -%}
+                {%- if data.maxlength %} maxlength="{{ data.maxlength }}"{% endif -%}
+                {%- if data.hook %} js-hook-{{ data.hook }}{% endif -%}>
+                
+        </div>
+
+    </div>
+
+{% endmacro %}

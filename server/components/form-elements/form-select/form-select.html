@@ -1,0 +1,20 @@
+{% macro select(data) %}
+
+    <div class="c-select form__item{%- if data.class %} {{ data.class }}{% endif -%}"
+    {%- if data.hook %} js-hook-{{ data.hook }}{% endif -%}>
+
+        <div class="select__wrapper" title="{{ data.label }}">
+
+            <label class="select__label">{{ data.label }}</label>
+
+            <select class="select__select" name="{{ data.name }}">
+
+              {{ caller() }}
+
+            </select>
+                
+        </div>
+
+    </div>
+
+{% endmacro %}

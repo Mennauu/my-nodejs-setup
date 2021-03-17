@@ -1,0 +1,21 @@
+.location__wrapper {
+  @include hide-scrollbars;
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  margin-left: -$global-spacing-sm;
+  margin-right: -$global-spacing-sm;
+  padding-left: $global-spacing-sm;
+  flex-direction: column;
+
+  &:after {
+    content: '';
+    padding-right: $global-spacing-sm;
+  }
+}
+
+.location__label {
+  display: block;
+  font-weight: $font-weight-bold;
+  margin-bottom: $global-spacing-md;
+}

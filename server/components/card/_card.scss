@@ -1,0 +1,52 @@
+$card-border-radius: 3px;
+$card-background-color: $color-white;
+$card-padding: $global-spacing;
+$card-shadow: 0 5px 10px rgba($color-black, 0.15);
+$card-width: 100%;
+
+.c-card {
+  background-color: $card-background-color;
+  border-radius: $card-border-radius;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: $card-width;
+
+  .c-image {
+    flex: 2;
+  }
+
+  .c-form {
+    padding: $global-spacing-lg;
+    flex: 1;
+  }
+}
+
+.card__wrapper {
+  position: relative;
+  display: flex;
+  padding-bottom: $card-padding * 2;
+
+  @include screen-tablet-portrait-and-bigger {
+    align-items: center;
+  }
+}
+
+.card--is-centered {
+  @include screen-tablet-portrait-and-bigger {
+    flex-direction: row;
+    justify-content: stretch;
+  }
+}
+
+.card--has-padding {
+  padding: $card-padding;
+}
+
+.card--has-shadow {
+  box-shadow: $card-shadow;
+}
+
+.card--is-transparent {
+  background-color: transparent;
+}

@@ -1,0 +1,31 @@
+.select__label {
+  display: block;
+  font-weight: $font-weight-bold;
+  margin-bottom: $global-spacing-md;
+}
+
+.select__select {
+  position: relative;
+  color: $color-black;
+  background-color: transparent;
+  font-family: $font-stack-secondary;
+  font-weight: $font-weight-bold;
+  font-size: 3rem;
+  border-radius: 3px;
+  border-width: 0;
+  appearance: none;
+  cursor: pointer;
+  margin-left: -$global-spacing;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+  }
+}
+
+.select__option {
+  font-size: 1.6rem;
+}

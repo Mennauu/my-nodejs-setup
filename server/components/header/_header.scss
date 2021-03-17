@@ -1,0 +1,104 @@
+$header-shadow-color: inset 0 2px 4px -3px rgba($color-black, 0.2);
+$header-width: 100%;
+$header-background-color: transparent;
+$header-z-index: 2;
+
+.c-header {
+  background-color: $header-background-color;
+  width: $header-width;
+  position: relative;
+  z-index: $header-z-index;
+
+  .user--is-authenticated & {
+    padding-left: $global-spacing-sm;
+    padding-right: $global-spacing-sm;
+
+    @include screen-tablet-portrait-and-bigger {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+    }
+  }
+}
+
+.header__wrapper {
+  padding-top: $global-spacing-md;
+  padding-bottom: $global-spacing-md;
+  display: flex;
+  align-items: center;
+}
+
+.header__navigation {
+  margin-left: auto;
+}
+
+.header__logo {
+  @include fluid-type(5, 4, 'height');
+}
+
+.header--has-shadow {
+  box-shadow: $header-shadow-color;
+}
+
+.header--is-white {
+  background-color: $color-white;
+
+  .user--is-authenticated & {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+
+  .c-logo {
+    color: $color-black;
+  }
+
+  .navigation__link {
+    color: $color-black;
+  }
+
+  .logo__text {
+    background: $color-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.header--is-visited {
+  background-color: $color-primary;
+  box-shadow: 0 8px 6px -6px rgba($color-black, 0.075);
+
+  .navigation__label {
+    color: $color-white;
+  }
+
+  .navigation__profile {
+    &:hover {
+      .navigation__label {
+        box-shadow: inset 0 -2px 0 0 $color-white;
+      }
+    }
+  }
+}
+
+.header--is-white,
+.header--is-visited {
+  .header__logo {
+    height: auto;
+  }
+
+  .header__wrapper {
+    padding-top: $global-spacing;
+    padding-bottom: $global-spacing;
+  }
+
+  .logo__side,
+  .logo__text {
+    font-size: 1.6rem;
+  }
+
+  .logo__image {
+    max-height: $global-spacing * 2.5;
+  }
+}

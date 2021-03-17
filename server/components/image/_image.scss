@@ -1,0 +1,17 @@
+$image-box-shadow: 0 5px 10px rgba($color-black, 0.15);
+$image-object-fit: cover;
+
+.c-image {
+  position: relative;
+}
+
+.image__default {
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: $image-object-fit;
+}
+
+.image--has-shadow {
+  box-shadow: $image-box-shadow;
+}

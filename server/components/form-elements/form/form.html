@@ -1,0 +1,26 @@
+{% macro form(data) %}
+
+<div class="c-form 
+  {%- if data.class %} {{ data.class }}{% endif -%}"
+  {% if data.novalidate %} novalidate{% endif %}>
+
+    {%- if data.title %}
+      <h1 class="form__title">{{ data.title }}</h1>
+    {% endif -%}
+
+    {%- if data.subtitle %}
+      <h2 class="form__subtitle">{{ data.subtitle }}</h2>
+    {% endif -%}
+
+    <form class="form__form" action="{{ data.action or '#' }}"
+      {%- if data.method %} method="{{ data.method }}"{% endif -%}
+      {%- if data.enctype %} enctype="{{ data.enctype }}"{% endif -%}
+      {%- if data.hook %} js-hook-{{ data.hook }}{% endif -%}>
+
+        {{ caller() }}
+
+    </form>
+
+</div>
+
+{% endmacro %}

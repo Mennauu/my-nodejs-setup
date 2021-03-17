@@ -1,0 +1,8 @@
+.u--is-hidden {
+  // sass-lint:disable-block no-important
+  display: none !important;
+}
+
+.u--sr-only {
+  @include sr-only;
+}

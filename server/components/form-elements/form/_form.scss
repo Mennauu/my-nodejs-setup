@@ -1,0 +1,21 @@
+.form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__item {
+  margin-bottom: $global-spacing-sm;
+}
+
+.form__button {
+  margin-top: $global-spacing-sm;
+}
+
+.form__title {
+  margin-top: -$global-spacing;
+}
+
+.form__subtitle {
+  // sass-lint:disable-block no-important
+  color: rgba($color-white, 0.8) !important;
+}

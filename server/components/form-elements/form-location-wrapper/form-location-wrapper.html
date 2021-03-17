@@ -1,0 +1,15 @@
+{% macro locationWrapper(data) %}
+
+  <div class="c-location form__item{%- if data.class %} {{ data.class }}{% endif -%}"
+      {%- if data.hook %} js-hook-{{ data.hook }}{% endif -%}>
+
+    <span class="location__label">{{ data.label }}</span>
+    <div class="location__wrapper" title="{{ data.label }}">
+
+      {{ caller() }}
+
+    </div>
+
+  </div>
+
+{% endmacro %}
