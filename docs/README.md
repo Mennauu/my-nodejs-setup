@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Logo" src="pt.png" width="150">
+  <img alt="Logo" src="maestro.png" width="150">
 </p>
 
 <h1 align="center">Menno's NodeJS setup</h1>
